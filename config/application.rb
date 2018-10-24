@@ -19,5 +19,6 @@ module DevExam
       g.template_engine :erb
       g.test_framework :rspec
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
   end
 end
