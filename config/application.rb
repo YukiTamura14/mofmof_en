@@ -8,8 +8,16 @@ Bundler.require(*Rails.groups)
 
 module DevExam
   class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    config.generators do |g|
+      g.routes false
+      g.assets false
+      g.helper false
+      g.jbuilder false
+      g.template_engine :erb
+      g.test_framework :rspec
+      g.fixture_replacement :factory_bot, dir: 'spec/factories'
   end
 end
