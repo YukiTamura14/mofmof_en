@@ -1,0 +1,22 @@
+<h1>物件登録</h1>
+
+<%= form_with(model: @user, local: true) do |f| %>  
+  <%= f.label :room_name %>
+  <%= f.text_field :room_name %>
+
+  <%= f.label :price %>
+  <%= f.number_field :price %>
+
+  <%= f.label :adress %>
+  <%= f.text_field :adress %>
+
+  <%= f.label :built_years %>
+  <%= f.number_field :built_years %>
+
+  <%= f.label :feature %>
+  <%= f.text_field :feature %>
+
+  <%= f.submit "登録する" %>
+<% end %>
+
+<%= link_to '戻る', rooms_path %>
