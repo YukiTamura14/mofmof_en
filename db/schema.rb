@@ -19,5 +19,4 @@ ActiveRecord::Schema.define(version: 20181024131029) do
     t.integer  "room_id"
     t.index ["room_id"], name: "index_stations_on_room_id"
   end
-
 end

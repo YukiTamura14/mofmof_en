@@ -6,5 +6,4 @@ class Room < ApplicationRecord
   validates :adress, presence: true, length: { in: 1..100 }
   validates :built_years, presence: true, numericality: true
 
-  # mount_uploader :image, ImageUploader
 end

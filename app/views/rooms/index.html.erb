@@ -1,0 +1,13 @@
+<h1>物件一覧</h1>
+
+  <% @rooms.each do |n| %>
+    <%= n.room_name %>
+    <%= n.price %>
+    <%= n.adress %>
+    <%= n.built_years %>
+    <%= link_to '詳細', room_path(n) %>
+    <%= link_to '編集', edit_picture_path(n) %>
+    <%= link_to '削除', n, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+
+<%= link_to '物件を登録する', _path %>

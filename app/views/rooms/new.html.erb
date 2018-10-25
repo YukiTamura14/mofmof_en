@@ -1,6 +1,6 @@
 <h1>物件登録</h1>
 
-<%= form_with(model: @user, local: true) do |f| %>  
+<%= form_for(model: @room, local: true) do |f| %>  
   <%= f.label :room_name %>
   <%= f.text_field :room_name %>
 
@@ -16,7 +16,20 @@
   <%= f.label :feature %>
   <%= f.text_field :feature %>
 
-  <%= f.submit "登録する" %>
+  <!-- <%= f.submit "登録する" %> -->
+<% end %>
+
+<%= form_for(model: @station, local: true) do |f| %>  
+  <%= f.label :station_name %>
+  <%= f.text_field :station_name %>
+
+  <%= f.label :line_to_station %>
+  <%= f.text_field :line_to_station %>
+
+  <%= f.label :minutes_on_foot %>
+  <%= f.number_field :minutes_on_foot %>
+
+  <!-- <%= f.submit "登録する" %> -->
 <% end %>
 
 <%= link_to '戻る', rooms_path %>
