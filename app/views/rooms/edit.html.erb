@@ -38,7 +38,9 @@
     <%= s.number_field :minutes_on_foot %>分</p>
   <% end %>
 
-  <%= r.submit "更新する" %>
+  <div class = "btn">
+    <%= r.submit "更新する" %>
+  </div>
 <% end %>
 
-<%= link_to '詳細', room_path(@room) %>|<%= link_to '戻る', root_path %>
+<%= link_to '詳細', room_path(@room) %> | <%= link_to '戻る', root_path %>

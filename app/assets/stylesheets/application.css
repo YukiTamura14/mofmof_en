@@ -14,3 +14,10 @@
  *= require_self
  */
 
+ .btn {
+  margin-bottom: 10px;
+}
+
+.btn input {
+  border-radius: 5px;
+}
