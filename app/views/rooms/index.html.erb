@@ -15,7 +15,7 @@
     <% @rooms.each do |r| %>
     <tr>
       <td><%= r.room_name %></td>
-      <td><%= r.price %>円</td>
+      <td><%= number_to_currency(r.price) %></td>
       <td><%= r.adress %></td>
       <td><%= r.built_years %>年</td>
       <td><%= r.feature %></td>

@@ -1,7 +1,7 @@
 <h1>閲覧</h1>
 
 <p>物件名:<%= @room.room_name %></p>
-<p>賃料:<%= @room.price %>円</p>
+<p>賃料:<%= number_to_currency(@room.price) %></p>
 <p>住所:<%= @room.adress %></p>
 <p>築年数<%= @room.built_years %>年</p>
 <p>備考<%= @room.feature %></p>

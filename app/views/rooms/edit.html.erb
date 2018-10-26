@@ -1,46 +1,5 @@
 <h1>物件編集</h1>
 
-<%= form_for(@room) do |r| %>
-  <p><%= r.label :"物件名" %>
-  <br>
-  <%= r.text_field :room_name %></p>
-
-  <p><%= r.label :"賃料" %>
-  <br>
-  <%= r.number_field :price %>円</p>
-
-  <p><%= r.label :"住所" %>
-  <br>
-  <%= r.text_field :adress %></p>
-
-  <p><%= r.label :"築年数" %>
-  <br>
-  <%= r.number_field :built_years %>年</p>
-
-  <p><%= r.label :"備考" %>
-  <br>
-  <%= r.text_area :feature %></p>
-
-<hr>
-
-  <%= r.fields_for :stations do |s| %>
-    <h3>路線名<%= s.index + 1 %></h3>
-    <p><%= s.label :"路線名" %>
-    <br>
-    <%= s.text_field :line_to_station %></p>
-
-    <p><%= s.label :"駅名" %>
-    <br>
-    <%= s.text_field :station_name %></p>
-
-    <p><%= s.label :"徒歩分数" %>
-    <br>
-    <%= s.number_field :minutes_on_foot %>分</p>
-  <% end %>
-
-  <div class = "btn">
-    <%= r.submit "更新する" %>
-  </div>
-<% end %>
+<%= render 'form', room: @room %>
 
 <%= link_to '詳細', room_path(@room) %> | <%= link_to '戻る', root_path %>
