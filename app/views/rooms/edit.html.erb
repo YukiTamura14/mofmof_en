@@ -1,4 +1,4 @@
-<h1>物件登録</h1>
+<h1>物件編集</h1>
 
 <%= form_for(@room) do |r| %>
   <p><%= r.label :"物件名" %>
@@ -38,7 +38,7 @@
     <%= s.number_field :minutes_on_foot %>分</p>
   <% end %>
 
-  <%= r.submit "登録する" %>
+  <%= r.submit "更新する" %>
 <% end %>
 
-<%= link_to '戻る', root_path %>
+<%= link_to '詳細', room_path(@room) %>|<%= link_to '戻る', root_path %>

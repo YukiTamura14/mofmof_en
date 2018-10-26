@@ -15,9 +15,9 @@
     <% @rooms.each do |r| %>
     <tr>
       <td><%= r.room_name %></td>
-      <td><%= r.price %></td>
+      <td><%= r.price %>円</td>
       <td><%= r.adress %></td>
-      <td><%= r.built_years %></td>
+      <td><%= r.built_years %>年</td>
       <td><%= r.feature %></td>
       <td><%= link_to '詳細', room_path(r) %></td>
       <td><%= link_to '編集', edit_room_path(r) %></td>
@@ -27,4 +27,5 @@
   </tbody>
 </table>
 
+<br>
 <%= link_to '物件を登録する', new_room_path %>

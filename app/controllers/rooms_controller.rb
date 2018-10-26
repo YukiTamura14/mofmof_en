@@ -1,4 +1,6 @@
 class RoomsController < ApplicationController
+  before_action :set_room, only: [:show, :edit, :update, :destroy]
+
   def new
     @room = Room.new
     2.times { @room.stations.build }
@@ -9,7 +11,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to root_path
     else
-      render 'new'
+      render :new
     end
   end
 
@@ -18,22 +20,28 @@ class RoomsController < ApplicationController
   end
 
   def show
-    @room = Room.find(params[:id])
   end
 
   def edit
-
   end
 
   def update
-    
+    if @room.update(room_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    @room.destroy
+    redirect_to root_path
   end
 
   private
+  def set_room
+    @room = Room.find(params[:id])
+  end
 
   def room_params
     params.require(:room).permit(:room_name,
@@ -41,8 +49,8 @@ class RoomsController < ApplicationController
                                  :adress,
                                  :built_years,
                                  :feature,
-             station_attributes:[:station_name, :line_to_station, :minutes_on_foot, :room_id]
-             )
+             stations_attributes:[:id, :station_name, :line_to_station, :minutes_on_foot]
+             ) # idを通すのはupdateのため、外すとレコードが増えて次回accepts_nested_attributes_forのlimitにひっかかる
   end
 
 end
