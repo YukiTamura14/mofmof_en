@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
 
   def new
     @room = Room.new
-    2.times { @room.stations.build }
+    Station::FORM.times { @room.stations.build }
   end
 
   def create
@@ -23,6 +23,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
+    (Station::FORM - @room.stations.count).times { @room.stations.build }
   end
 
   def update

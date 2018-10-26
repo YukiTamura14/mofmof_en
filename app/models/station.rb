@@ -1,4 +1,5 @@
 class Station < ApplicationRecord
+  FORM = 2
   belongs_to :room, inverse_of: :stations
 
   validates :station_name, length: { in: 1..20 }
