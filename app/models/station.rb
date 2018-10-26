@@ -1,5 +1,5 @@
 class Station < ApplicationRecord
-  belongs_to :room, inverse_of: :station
+  belongs_to :room, inverse_of: :stations
 
   validates :station_name, length: { in: 1..20 }
   validates :line_to_station, length: { in: 1..20 }

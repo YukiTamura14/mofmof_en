@@ -1,30 +1,41 @@
 <h1>物件登録</h1>
 
 <%= form_for(@room) do |r| %>
-  <%= r.label :room_name %>
-  <%= r.text_field :room_name %>
+  <p><%= r.label :"物件名" %>
+  <br>
+  <%= r.text_field :room_name %></p>
 
-  <%= r.label :price %>
-  <%= r.number_field :price %>
+  <p><%= r.label :"賃料" %>
+  <br>
+  <%= r.number_field :price %>円</p>
 
-  <%= r.label :adress %>
-  <%= r.text_field :adress %>
+  <p><%= r.label :"住所" %>
+  <br>
+  <%= r.text_field :adress %></p>
 
-  <%= r.label :built_years %>
-  <%= r.number_field :built_years %>
+  <p><%= r.label :"築年数" %>
+  <br>
+  <%= r.number_field :built_years %>年</p>
 
-  <%= r.label :feature %>
-  <%= r.text_field :feature %>
+  <p><%= r.label :"備考" %>
+  <br>
+  <%= r.text_area :feature %></p>
 
-  <%= r.fields_for :station do |s| %>
-    <%= s.label :station_name %>
-    <%= s.text_field :station_name %>
+<hr>
 
-    <%= s.label :line_to_station %>
-    <%= s.text_field :line_to_station %>
+  <%= r.fields_for :stations do |s| %>
+    <h3>路線名<%= s.index + 1 %></h3>
+    <p><%= s.label :"路線名" %>
+    <br>
+    <%= s.text_field :line_to_station %></p>
 
-    <%= s.label :minutes_on_foot %>
-    <%= s.number_field :minutes_on_foot %>
+    <p><%= s.label :"駅名" %>
+    <br>
+    <%= s.text_field :station_name %></p>
+
+    <p><%= s.label :"徒歩分数" %>
+    <br>
+    <%= s.number_field :minutes_on_foot %>分</p>
   <% end %>
 
   <%= r.submit "登録する" %>

@@ -1,12 +1,11 @@
 class RoomsController < ApplicationController
   def new
     @room = Room.new
-    @room.station.build
+    2.times { @room.stations.build }
   end
 
   def create
     @room = Room.new(room_params)
-    binding.pry
     if @room.save
       redirect_to root_path
     else
