@@ -1,0 +1,19 @@
+<h1>閲覧</h1>
+
+<p>物件名:<%= @room.room_name %></p>
+<p>賃料:<%= number_to_currency(@room.price) %></p>
+<p>住所:<%= @room.adress %></p>
+<p>築年数<%= @room.built_years %>年</p>
+<p>備考<%= @room.feature %></p>
+
+<hr>
+
+<% @room.stations.each_with_index do |x, i| %>
+  <h3>最寄り駅 <%= i+1 %></h3>
+  <p>路線名 <%= x.line_to_station %></p>
+  <p>駅名 <%= x.station_name %></p>
+  <p>徒歩分数 <%= x.minutes_on_foot %>分</p>
+<% end %>
+
+<br>
+<%= link_to '編集', edit_room_path(@room) %> | <%= link_to '戻る', root_path %>
