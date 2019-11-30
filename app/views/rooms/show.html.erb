@@ -1,19 +1,19 @@
-<h1>閲覧</h1>
+<h1>Property Detail</h1>
 
-<p>物件名:<%= @room.room_name %></p>
-<p>賃料:<%= number_to_currency(@room.price) %></p>
-<p>住所:<%= @room.adress %></p>
-<p>築年数<%= @room.built_years %>年</p>
-<p>備考<%= @room.feature %></p>
+<p>Property:<%= @room.room_name %></p>
+<p>Rent:<%= number_to_currency(@room.price) %></p>
+<p>Address:<%= @room.adress %></p>
+<p>Building Age<%= @room.built_years %>年</p>
+<p>Remarks<%= @room.feature %></p>
 
 <hr>
 
 <% @room.stations.each_with_index do |x, i| %>
-  <h3>最寄り駅 <%= i+1 %></h3>
-  <p>路線名 <%= x.line_to_station %></p>
-  <p>駅名 <%= x.station_name %></p>
-  <p>徒歩分数 <%= x.minutes_on_foot %>分</p>
+  <h3>Nearest station<%= i+1 %></h3>
+  <p>Name of railway line<%= x.line_to_station %></p>
+  <p>station name <%= x.station_name %></p>
+  <p>How many minutes walk<%= x.minutes_on_foot %>分</p>
 <% end %>
 
 <br>
-<%= link_to '編集', edit_room_path(@room) %> | <%= link_to '戻る', root_path %>
+<%= link_to 'Edit propety information', edit_room_path(@room) %> | <%= link_to 'Back', root_path %>

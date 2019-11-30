@@ -1,0 +1,46 @@
+current directory: /Users/yukitamura/new_diver/mofmof2/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+/Users/yukitamura/.rbenv/versions/2.3.1/bin/ruby -r ./siteconf20190806-31629-1jl984o.rb extconf.rb
+Ignoring byebug-9.0.5 because its extensions are not built.  Try: gem pristine byebug --version 9.0.5
+Ignoring debug_inspector-0.0.2 because its extensions are not built.  Try: gem pristine debug_inspector --version 0.0.2
+Ignoring ffi-1.9.14 because its extensions are not built.  Try: gem pristine ffi --version 1.9.14
+Ignoring nio4r-1.2.1 because its extensions are not built.  Try: gem pristine nio4r --version 1.2.1
+Ignoring nokogiri-1.6.8 because its extensions are not built.  Try: gem pristine nokogiri --version 1.6.8
+Ignoring puma-3.6.0 because its extensions are not built.  Try: gem pristine puma --version 3.6.0
+Ignoring sqlite3-1.4.1 because its extensions are not built.  Try: gem pristine sqlite3 --version 1.4.1
+Ignoring sqlite3-1.3.11 because its extensions are not built.  Try: gem pristine sqlite3 --version 1.3.11
+Ignoring websocket-driver-0.6.4 because its extensions are not built.  Try: gem pristine websocket-driver --version 0.6.4
+checking for sqlite3.h... yes
+checking for pthread_create() in -lpthread... yes
+checking for sqlite3_libversion_number() in -lsqlite3... yes
+checking for rb_proc_arity()... yes
+checking for rb_integer_pack()... yes
+checking for sqlite3_initialize()... yes
+checking for sqlite3_backup_init()... yes
+checking for sqlite3_column_database_name()... yes
+checking for sqlite3_enable_load_extension()... yes
+checking for sqlite3_load_extension()... yes
+checking for sqlite3_open_v2()... yes
+checking for sqlite3_prepare_v2()... yes
+checking for sqlite3_int64 in sqlite3.h... yes
+checking for sqlite3_uint64 in sqlite3.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/yukitamura/new_diver/mofmof2/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-18/2.3.0-static/sqlite3-1.3.13/mkmf.log
+
+current directory: /Users/yukitamura/new_diver/mofmof2/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR=" clean
+
+current directory: /Users/yukitamura/new_diver/mofmof2/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR="
+compiling sqlite3.c
+compiling database.c
+compiling exception.c
+compiling backup.c
+compiling statement.c
+linking shared-object sqlite3/sqlite3_native.bundle
+
+current directory: /Users/yukitamura/new_diver/mofmof2/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 sqlite3_native.bundle ./.gem.20190806-31629-1q6cr29/sqlite3

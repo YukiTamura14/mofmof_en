@@ -11,6 +11,7 @@ class RoomsController < ApplicationController
     if @room.save
       redirect_to root_path
     else
+      Station::FORM.times { @room.stations.build }
       render :new
     end
   end
@@ -23,7 +24,7 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    (Station::FORM - @room.stations.count).times { @room.stations.build }
+  1.times { @room.stations.build }
   end
 
   def update

@@ -1,21 +1,32 @@
 <%= form_for(@room) do |r| %>
-  <p><%= r.label :"物件名" %><br><%= r.text_field :room_name %></p>
-  <p><%= r.label :"賃料" %><br><%= number_to_currency(r.number_field :price) %></p>
-  <p><%= r.label :"住所" %><br><%= r.text_field :adress %></p>
-  <p><%= r.label :"築年数" %><br><%= r.number_field :built_years %>年</p>
-  <p><%= r.label :"備考" %><br><%= r.text_area :feature %></p>
+  <% if @room.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @room.errors.count %>件のエラーがあります。</h2>
+    <ul>
+      <% @room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+ <% end %>
+  <p><%= r.label :"Property" %><br><%= r.text_field :room_name %></p>
+  <p><%= r.label :"Rent" %><br><%= r.number_field :price %>yen</p>
+  <p><%= r.label :"Address" %><br><%= r.text_field :adress %></p>
+  <p><%= r.label :"Building Age" %><br><%= r.number_field :built_years %>year/years old</p>
+  <p><%= r.label :"Remarks" %><br><%= r.text_area :feature %></p>
   <hr>
 
   <%= r.fields_for :stations do |s| %>
-    <h3>路線名<%= s.index + 1 %></h3>
 
-    <p><%= s.label :"路線名" %><br><%= s.text_field :line_to_station %></p>
-    <p><%= s.label :"駅名" %><br><%= s.text_field :station_name %></p>
-    <p><%= s.label :"徒歩分数" %><br><%= s.number_field :minutes_on_foot %>分</p>
+    <h4>Name of railway line<%= s.index + 1 %></h4>
+
+    <p><%= s.label :"Name of railway line" %><br><%= s.text_field :line_to_station %></p>
+    <p><%= s.label :"Station name" %><br><%= s.text_field :station_name %></p>
+    <p><%= s.label :"How many minutes walk" %><br><%= s.number_field :minutes_on_foot %>min/mins</p>
   <% end %>
 
   <div class = "btn">
-    <%= r.submit '登録する' if action_name == 'new' %>
-    <%= r.submit '更新する' if action_name == 'edit' %>
+    <%= r.submit 'Register' unless action_name == 'edit' %>
+    <%= r.submit 'Update' if action_name == 'edit' %>
   </div>
 <% end %>

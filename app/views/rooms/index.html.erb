@@ -1,13 +1,13 @@
-<h1>物件一覧</h1>
+<h1>Property List</h1>
 
 <table>
   <tbody>
     <tr>
-      <th>物件名</th>
-      <th>賃料</th>
-      <th>住所</th>
-      <th>築年数</th>
-      <th>備考</th>
+      <th>Property</th>
+      <th>Rent</th>
+      <th>Address</th>
+      <th>Building Age</th>
+      <th>Remarks</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,9 +19,9 @@
       <td><%= r.adress %></td>
       <td><%= r.built_years %>年</td>
       <td><%= r.feature %></td>
-      <td><%= link_to '詳細', room_path(r) %></td>
-      <td><%= link_to '編集', edit_room_path(r) %></td>
-      <td><%= link_to '削除', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'detail', room_path(r) %></td>
+      <td><%= link_to 'edit', edit_room_path(r) %></td>
+      <td><%= link_to 'delete', r, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,5 @@
 
 <br>
 <div class="btn">
-  <%= link_to '物件を登録する', new_room_path %>
+  <%= link_to 'Register Property', new_room_path %>
 </div>
